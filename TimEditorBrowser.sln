@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimEditorBrowser", "TimEditorBrowser\TimEditorBrowser.csproj", "{CE6F062C-3FE6-4CBF-B357-C12DA2F052B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.TimBrowser", "ClassLibrary.TimBrowser\ClassLibrary.TimBrowser.csproj", "{5E0160BB-87D0-4AF3-B07F-95BD9ECD017B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE6F062C-3FE6-4CBF-B357-C12DA2F052B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6F062C-3FE6-4CBF-B357-C12DA2F052B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6F062C-3FE6-4CBF-B357-C12DA2F052B1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CE6F062C-3FE6-4CBF-B357-C12DA2F052B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6F062C-3FE6-4CBF-B357-C12DA2F052B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6F062C-3FE6-4CBF-B357-C12DA2F052B1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5E0160BB-87D0-4AF3-B07F-95BD9ECD017B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0160BB-87D0-4AF3-B07F-95BD9ECD017B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0160BB-87D0-4AF3-B07F-95BD9ECD017B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0160BB-87D0-4AF3-B07F-95BD9ECD017B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

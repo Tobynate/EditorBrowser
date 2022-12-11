@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimEditorBrowser.BrowserPage">
+    <ScrollView>
+        <Grid HorizontalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0">
+                <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
+                    
+                    <Button x:Name="EditorPageBtn" BackgroundColor="#A1B608" Clicked="EditorPageBtn_Clicked" Text="Editor Page(OBC)" HeightRequest="40" VerticalOptions="Center"/>
+                    <Button x:Name="GrammarlyPage" Text="Grammarly Page" BackgroundColor="#BA416D" Clicked="GrammarlyPage_Clicked" HeightRequest="40" VerticalOptions="Center"/>
+                    <Button x:Name="CheckBalance" Text="Check Balance (OBC)" BackgroundColor="#5D4C65" Clicked="CheckBalance_Clicked" HeightRequest="40" VerticalOptions="Center"/>
+                    
+                    
+                    <Image x:Name="MoveLeft"  HeightRequest="40" VerticalOptions="Center" Source="leftarrow.png"/>      <Image x:Name="MoveRight"  HeightRequest="40" VerticalOptions="Center" Source="rightarrow.png"/>
+                    <Image x:Name="RefreshPage"  HeightRequest="40" VerticalOptions="Center" Source="refresh.png"/>
+                    <Image x:Name="AddNewPage"  HeightRequest="40" VerticalOptions="Center" Source="addpage.png"/>
+                    <Image x:Name="SideBarMenu"  HeightRequest="40" VerticalOptions="Center" IsEnabled="False"
+                           Source="menu.png"/>
+
+                </HorizontalStackLayout>
+                <Line BackgroundColor="#AE8A00" HeightRequest="5" WidthRequest="1700" />
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout x:Name="LayerMenu" Spacing="25" Grid.Row="1" Grid.Column="0" VerticalOptions="End" IsVisible="false">
+
+                <Button x:Name="Login" Text="Login" HeightRequest="40" VerticalOptions="End" BackgroundColor="HotPink" IsVisible="false"
+                        Clicked="Login_Clicked"/>
+
+                <HorizontalStackLayout x:Name="SearchTab" HeightRequest="40" WidthRequest="310" Spacing="15" VerticalOptions="End" IsVisible="false">
+                    <Entry x:Name="SearchEntry" WidthRequest="180" HeightRequest="30" VerticalOptions="End" Placeholder="search" PlaceholderColor="Black" BackgroundColor="#CDCDCD"/>
+                    <Button x:Name="SearchURL" Text="Search" HeightRequest="35" VerticalOptions="End" BackgroundColor="#B84136"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout x:Name="CredentialsTab" IsVisible="false" HeightRequest="100" VerticalOptions="End"
+                                   Grid.Row="2" Grid.Column="0">
+                <ListView x:Name="CredentialsList" IsVisible="false" BackgroundColor="#8E75E3" WidthRequest="200" HeightRequest="80"
+                              VerticalOptions="End"
+                          ItemSelected="CredentialsList_ItemSelected"/>
+
+                <HorizontalStackLayout x:Name="SaveCredentialsTab" IsVisible="false" Spacing="15" HeightRequest="100" VerticalOptions="End">
+                    <Entry x:Name="Username" Placeholder="Username" WidthRequest="180" HeightRequest="30" VerticalOptions="End"
+                           PlaceholderColor="Black" BackgroundColor="#CDCDCD"
+                           />
+                    <Entry x:Name="Password" Placeholder="Password" WidthRequest="180" HeightRequest="30" VerticalOptions="End"
+                           PlaceholderColor="Black" BackgroundColor="#CDCDCD"
+                           />
+                    <Button x:Name="SaveCredentials" Text="Save" HeightRequest="35" VerticalOptions="End" BackgroundColor="HotPink"
+                            Clicked="SaveCredentials_Clicked"
+                            />
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+
+            <VerticalStackLayout
+                Spacing="10" 
+            Padding="10,0" 
+            VerticalOptions="Center"
+             Grid.Column="0" Grid.Row="3">
+                <WebView x:Name="MainBrowser" HeightRequest="700" WidthRequest="900"
+                         Navigating="MainBrowser_Navigating"
+                         Navigated="MainBrowser_Navigated"/>
+
+                <WebView x:Name="GrammarlyBrowser" HeightRequest="700" WidthRequest="900"
+                         IsVisible="false"
+                    />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout x:Name="SlideInTab" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" ZIndex="1" VerticalOptions="Start" HorizontalOptions="Start" Margin="0, 0, 40, 0">
+
+                <HorizontalStackLayout VerticalOptions="Start" HorizontalOptions="Start">
+                    <Button x:Name="WriteErrors" Text="Write Errors" HeightRequest="35" VerticalOptions="End" BackgroundColor="HotPink"
+                        Clicked="WriteErrors_Clicked"/>
+                    <Button x:Name="GreenLight" BackgroundColor="Red" Text="Loading" HeightRequest="35" />
+                </HorizontalStackLayout>
+
+                <ScrollView>
+                    <VerticalStackLayout>
+                        <WebView x:Name="SideTab" 
+                                 IsVisible="false"
+                                 MaximumWidthRequest="900"
+                                 WidthRequest="500"
+                                 MinimumHeightRequest="500"
+                                 MaximumHeightRequest="900"
+                                 ZIndex="1"
+                                 />
+                    </VerticalStackLayout>
+                </ScrollView>
+                <Button x:Name="LeaveComment" BackgroundColor="#B7B3B3" BorderColor="Gold" TextColor="Gold" Text="Leave Comment" HeightRequest="35" 
+                        VerticalOptions="Start" Clicked="LeaveComment_Clicked"/>
+                <Button x:Name="CheckGuidelines" BackgroundColor="#B7B3B3" BorderColor="#FF1289" TextColor="#FF1289" Text="Check Guidelines" HeightRequest="45" BorderWidth="5"
+                        VerticalOptions="Start" Clicked="CheckGuidelines_Clicked"/>
+            </VerticalStackLayout>
+            
+        </Grid>
+    </ScrollView>
+</ContentPage>
